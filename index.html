@@ -1,0 +1,829 @@
+```html
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copacetic (Pty) Ltd | Leading Construction & Civil Engineering Solutions</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Tailwind Config for Copacetic Brand Colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandDark: '#0b0f17',
+                        brandCyan: '#00c3ff',
+                        brandYellow: '#ffcc00',
+                        brandRed: '#e63946',
+                        cardDark: '#151c28',
+                        textLight: '#f0f4f8',
+                        brandMuted: '#94a3b8'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Utility Styles -->
+    <style>
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0b0f17;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #151c28;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00c3ff;
+        }
+
+        .glow-cyan {
+            box-shadow: 0 0 25px rgba(0, 195, 255, 0.25);
+        }
+        .glow-yellow {
+            box-shadow: 0 0 20px rgba(255, 204, 0, 0.2);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #00c3ff 0%, #ffffff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .bg-pattern {
+            background-image: radial-gradient(rgba(0, 195, 255, 0.08) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="bg-brandDark text-textLight font-sans antialiased selection:bg-brandCyan selection:text-brandDark min-h-screen flex flex-col pb-20 md:pb-0">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-gradient-to-r from-brandDark via-cardDark to-brandDark border-b border-gray-800 text-xs py-2 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2 text-center sm:text-left">
+            <div class="flex items-center gap-4 text-brandMuted">
+                <span class="inline-flex items-center text-brandYellow font-semibold">
+                    <i class="fa-solid fa-hard-hat mr-1.5"></i> CIDB & NHBRC Compliant
+                </span>
+                <span class="hidden md:inline">|</span>
+                <span class="hidden md:inline"><i class="fa-solid fa-location-dot text-brandCyan mr-1"></i> Serving Gauteng & Limpopo</span>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="tel:0740276169" class="hover:text-brandCyan transition-colors flex items-center gap-1.5 font-medium">
+                    <i class="fa-solid fa-phone text-brandYellow"></i> 074 027 6169
+                </a>
+                <a href="https://wa.me/27740276169" target="_blank" rel="noopener noreferrer" class="hover:text-green-400 transition-colors flex items-center gap-1.5 font-medium">
+                    <i class="fa-brands fa-whatsapp text-green-500"></i> WhatsApp Us
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header / Navigation -->
+    <header class="sticky top-0 z-40 bg-brandDark/90 backdrop-blur-md border-b border-gray-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-brandCyan to-brandYellow p-0.5 shadow-lg group-hover:scale-105 transition-transform">
+                    <div class="w-full h-full bg-brandDark rounded-[10px] flex items-center justify-center">
+                        <i class="fa-solid fa-helmet-safety text-brandYellow text-xl"></i>
+                    </div>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-xl font-extrabold tracking-wider text-white uppercase leading-none">
+                        Copacetic <span class="text-brandCyan text-xs tracking-normal font-bold block sm:inline">(Pty) Ltd</span>
+                    </span>
+                    <span class="text-[10px] text-brandMuted tracking-widest uppercase mt-1">Engineering & Construction</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-gray-300">
+                <a href="#about" class="hover:text-brandCyan transition-colors">About Us</a>
+                <a href="#services" class="hover:text-brandCyan transition-colors">Contractor Fleet Services</a>
+                <a href="#quote" class="hover:text-brandCyan transition-colors">Instant Quote</a>
+                <a href="#contact" class="hover:text-brandCyan transition-colors">Contact</a>
+            </nav>
+
+            <!-- CTA Header Buttons -->
+            <div class="hidden lg:flex items-center gap-3">
+                <a href="tel:0740276169" class="px-4 py-2.5 rounded-xl border border-brandCyan/30 text-brandCyan hover:bg-brandCyan/10 transition-colors text-sm font-semibold flex items-center gap-2">
+                    <i class="fa-solid fa-headset"></i> Call Direct
+                </a>
+                <a href="#quote" class="px-5 py-2.5 rounded-xl bg-brandCyan text-brandDark hover:bg-cyan-400 font-bold text-sm shadow-md hover:shadow-brandCyan/20 transition-all flex items-center gap-2">
+                    <i class="fa-solid fa-paper-plane"></i> Get Quote
+                </a>
+            </div>
+
+            <!-- Mobile Drawer Toggle Button -->
+            <button id="mobileMenuBtn" aria-label="Toggle Navigation Menu" class="md:hidden text-gray-300 hover:text-white p-2 rounded-lg focus:outline-none">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer Overlay & Nav Menu -->
+    <div id="mobileDrawer" class="fixed inset-0 z-50 bg-brandDark/95 backdrop-blur-xl flex flex-col justify-between p-6 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+        <div>
+            <div class="flex items-center justify-between pb-6 border-b border-gray-800">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-helmet-safety text-brandYellow text-2xl"></i>
+                    <span class="font-bold text-lg text-white">COPACETIC (PTY) LTD</span>
+                </div>
+                <button id="closeDrawerBtn" aria-label="Close Navigation Menu" class="text-gray-400 hover:text-white p-2">
+                    <i class="fa-solid fa-xmark text-2xl"></i>
+                </button>
+            </div>
+            <nav class="mt-8 flex flex-col gap-6 text-lg font-semibold text-gray-200">
+                <a href="#about" class="mobile-link hover:text-brandCyan transition-colors flex items-center gap-3">
+                    <i class="fa-solid fa-building-user text-brandCyan w-6"></i> About Us
+                </a>
+                <a href="#services" class="mobile-link hover:text-brandCyan transition-colors flex items-center gap-3">
+                    <i class="fa-solid fa-screwdriver-wrench text-brandYellow w-6"></i> All 9 Services
+                </a>
+                <a href="#quote" class="mobile-link hover:text-brandCyan transition-colors flex items-center gap-3">
+                    <i class="fa-brands fa-whatsapp text-green-400 w-6"></i> WhatsApp Quote
+                </a>
+                <a href="#contact" class="mobile-link hover:text-brandCyan transition-colors flex items-center gap-3">
+                    <i class="fa-solid fa-map-location-dot text-brandRed w-6"></i> Contact & Location
+                </a>
+            </nav>
+        </div>
+
+        <div class="flex flex-col gap-3 pt-6 border-t border-gray-800">
+            <a href="tel:0740276169" class="w-full py-3 rounded-xl bg-cardDark border border-brandCyan/30 text-brandCyan text-center font-bold flex items-center justify-center gap-2">
+                <i class="fa-solid fa-phone"></i> Call 074 027 6169
+            </a>
+            <a href="https://wa.me/27740276169" target="_blank" rel="noopener noreferrer" class="w-full py-3 rounded-xl bg-green-600 hover:bg-green-500 text-white text-center font-bold flex items-center justify-center gap-2">
+                <i class="fa-brands fa-whatsapp text-xl"></i> Chat on WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative bg-pattern py-16 lg:py-24 overflow-hidden border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Hero Left Column Text -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brandCyan/10 border border-brandCyan/30 text-brandCyan text-xs sm:text-sm font-semibold">
+                        <span class="w-2 h-2 rounded-full bg-brandCyan animate-ping"></span>
+                        Trusted General Contractor Fleet in SA
+                    </div>
+                    
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight text-white">
+                        Providing Reliable Services & <span class="text-gradient">Excellent Solutions</span>
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-brandMuted max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Copacetic (Pty) Ltd delivers top-tier Civil, Structural, Roadworks, and Quantity Surveying services across Gauteng and Limpopo. We bring precision engineering, health & safety excellence, and complete reliability to every site.
+                    </p>
+
+                    <!-- CTAs -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#quote" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-brandCyan to-cyan-500 text-brandDark font-extrabold text-base shadow-lg glow-cyan hover:scale-[1.02] transition-all flex items-center justify-center gap-3">
+                            <i class="fa-brands fa-whatsapp text-xl"></i> Request Direct Quote
+                        </a>
+                        <a href="tel:0740276169" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-cardDark border border-gray-700 text-white font-bold text-base hover:bg-gray-800 transition-all flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-phone text-brandYellow"></i> Call 074 027 6169
+                        </a>
+                    </div>
+
+                    <!-- Trust Stats / Highlights -->
+                    <div class="grid grid-cols-3 gap-4 pt-8 border-t border-gray-800/80 max-w-lg mx-auto lg:mx-0 text-center">
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-brandYellow">9+</div>
+                            <div class="text-xs text-brandMuted mt-0.5">Core Divisions</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-brandCyan">100%</div>
+                            <div class="text-xs text-brandMuted mt-0.5">Compliance Standard</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-white">GP & LP</div>
+                            <div class="text-xs text-brandMuted mt-0.5">Regional Coverage</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Right Column / Fleet Branding Showcase Element -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none rounded-2xl bg-gradient-to-b from-cardDark to-brandDark p-6 border border-gray-800 glow-yellow">
+                        <!-- Vehicle / Mobile Branding Badge Banner -->
+                        <div class="relative h-64 sm:h-72 rounded-xl bg-gray-900 overflow-hidden flex flex-col justify-between p-6 border border-gray-800 group">
+                            <!-- Background Overlay Pattern -->
+                            <div class="absolute inset-0 bg-gradient-to-br from-brandCyan/20 via-transparent to-brandYellow/10 opacity-70"></div>
+                            <i class="fa-solid fa-truck-pickup absolute -right-6 -bottom-6 text-9xl text-gray-800/40 group-hover:text-brandCyan/10 transition-colors"></i>
+
+                            <div class="relative z-10 flex justify-between items-start">
+                                <span class="bg-brandYellow text-brandDark font-black text-xs px-3 py-1 rounded-md uppercase tracking-wider">Fleet Unit Active</span>
+                                <i class="fa-solid fa-shield-halved text-brandCyan text-2xl"></i>
+                            </div>
+
+                            <div class="relative z-10 space-y-2">
+                                <div class="text-xs uppercase tracking-widest text-brandCyan font-semibold">Contractor Fleet & Site Operations</div>
+                                <div class="text-2xl font-black text-white leading-tight">COPACETIC (PTY) LTD</div>
+                                <p class="text-xs text-gray-300">Equipped with specialized machinery, certified safety teams, and prompt material supply lines.</p>
+                            </div>
+
+                            <div class="relative z-10 pt-3 border-t border-gray-800 flex items-center justify-between text-xs text-brandMuted">
+                                <span><i class="fa-solid fa-check-circle text-green-400 mr-1"></i> Rapid Site Deployment</span>
+                                <span class="text-brandYellow font-bold">Gauteng / Limpopo</span>
+                            </div>
+                        </div>
+
+                        <!-- Mini Callout Banner -->
+                        <div class="mt-4 p-4 rounded-xl bg-brandDark/80 border border-gray-800 flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-brandRed/20 text-brandRed flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-triangle-exclamation text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-white uppercase">Emergency Structural Repairs?</h4>
+                                <p class="text-xs text-brandMuted">Direct helpline available for rapid civil & maintenance dispatch.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-brandDark relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <div class="inline-flex items-center gap-2 text-brandYellow text-sm font-bold uppercase tracking-wider">
+                        <i class="fa-solid fa-compass"></i> About Our Company
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight">
+                        Engineered for Durability, Driven by Safety & Excellence
+                    </h2>
+                    <p class="text-brandMuted leading-relaxed">
+                        <strong class="text-white">Copacetic (Pty) Ltd</strong> is a multi-disciplinary construction and engineering solutions provider operating in South Africa. Headquartered in Johannesburg, we deliver full-scope contractor services ranging from foundational civil structures and roadworks to detailed interior renovations and structural health and safety consultations.
+                    </p>
+                    <p class="text-brandMuted leading-relaxed">
+                        Our philosophy centers around precision, cost efficiency, and unwavering adherence to regulatory standards. Whether managing public infrastructure works or private commercial developments, Copacetic ensures every project is executed seamlessly—living up to our name: completely satisfactory and in perfect order.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                        <div class="p-4 rounded-xl bg-cardDark border border-gray-800 flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-brandCyan text-lg mt-0.5"></i>
+                            <div>
+                                <h3 class="font-bold text-white text-sm">Certified Expertise</h3>
+                                <p class="text-xs text-brandMuted mt-1">Qualified engineers and quantity surveyors leading every project.</p>
+                            </div>
+                        </div>
+                        <div class="p-4 rounded-xl bg-cardDark border border-gray-800 flex items-start gap-3">
+                            <i class="fa-solid fa-clock-rotate-left text-brandYellow text-lg mt-0.5"></i>
+                            <div>
+                                <h3 class="font-bold text-white text-sm">On-Time Execution</h3>
+                                <p class="text-xs text-brandMuted mt-1">Strict timeline management and site progress tracking.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Info Card Showcase -->
+                <div class="bg-cardDark p-8 rounded-2xl border border-gray-800 space-y-6 relative">
+                    <div class="border-b border-gray-800 pb-4">
+                        <h3 class="text-xl font-extrabold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-bullseye text-brandRed"></i> Our Core Mission
+                        </h3>
+                        <p class="text-sm text-brandMuted mt-2">
+                            "Providing reliable services and excellent solutions in Engineering, Construction, and Infrastructure Development through ethical practices and skilled craftsmanship."
+                        </p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h4 class="text-xs font-bold uppercase tracking-widest text-brandCyan">Key Service Regions</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 rounded-lg bg-brandDark text-xs font-medium border border-gray-800 text-gray-300">Johannesburg</span>
+                            <span class="px-3 py-1 rounded-lg bg-brandDark text-xs font-medium border border-gray-800 text-gray-300">Gauteng Province</span>
+                            <span class="px-3 py-1 rounded-lg bg-brandDark text-xs font-medium border border-gray-800 text-gray-300">Polokwane</span>
+                            <span class="px-3 py-1 rounded-lg bg-brandDark text-xs font-medium border border-gray-800 text-gray-300">Limpopo Province</span>
+                            <span class="px-3 py-1 rounded-lg bg-brandDark text-xs font-medium border border-gray-800 text-gray-300">Surrounding Municipalities</span>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 border-t border-gray-800 flex items-center justify-between text-xs text-brandMuted">
+                        <span>Registration & Compliance Verified</span>
+                        <a href="tel:0740276169" class="text-brandYellow font-bold hover:underline">Direct Contact →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-cardDark/50 border-y border-gray-800 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <span class="text-brandCyan font-bold text-sm uppercase tracking-widest">Contractor Fleet Solutions</span>
+                <h2 class="text-3xl sm:text-5xl font-black text-white">Our 9 Core Specialized Services</h2>
+                <p class="text-brandMuted text-base">
+                    From ground-breaking civil infrastructure to specialized safety consulting, Copacetic (Pty) Ltd provides comprehensive engineering capabilities.
+                </p>
+            </div>
+
+            <!-- Grid for 9 Services -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Service 1: Building Construction -->
+                <div class="bg-cardDark rounded-2xl p-6 border border-gray-800 hover:border-brandCyan/50 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1">
+                    <div class="space-y-4">
+                        <div class="w-14 h-14 rounded-xl bg-brandCyan/10 border border-brandCyan/20 text-brandCyan flex items-center justify-center text-2xl group-hover:bg-brandCyan group-hover:text-brandDark transition-colors">
+                            <i class="fa-solid fa-city"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">1. Building Construction</h3>
+                        <p class="text-sm text-brandMuted leading-relaxed">
+                            Turnkey residential, commercial, and industrial building projects. Full structural brickwork, concrete slab construction, and end-to-end site management.
+                        </p>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-gray-800/80 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-brandYellow">Residential & Commercial</span>
+                        <a href="#quote" onclick="preselectService('Building Construction')" class="text-brandCyan text-xs font-bold flex items-center gap-1 hover:underline">
+                            Request Quote <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 2: Renovations -->
+                <div class="bg-cardDark rounded-2xl p-6 border border-gray-800 hover:border-brandCyan/50 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1">
+                    <div class="space-y-4">
+                        <div class="w-14 h-14 rounded-xl bg-brandYellow/10 border border-brandYellow/20 text-brandYellow flex items-center justify-center text-2xl group-hover:bg-brandYellow group-hover:text-brandDark transition-colors">
+                            <i class="fa-solid fa-paint-roller"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">2. Renovations</h3>
+                        <p class="text-sm text-brandMuted leading-relaxed">
+                            Property transformations, architectural modernizations, structural alterations, office fit-outs, and complete interior/exterior remodeling.
+                        </p>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-gray-800/80 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-brandYellow">Interior & Exterior</span>
+                        <a href="#quote" onclick="preselectService('Renovations')" class="text-brandCyan text-xs font-bold flex items-center gap-1 hover:underline">
+                            Request Quote <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 3: Repair and Maintenance -->
+                <div class="bg-cardDark rounded-2xl p-6 border border-gray-800 hover:border-brandCyan/50 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1">
+                    <div class="space-y-4">
+                        <div class="w-14 h-14 rounded-xl bg-brandRed/10 border border-brandRed/20 text-brandRed flex items-center justify-center text-2xl group-hover:bg-brandRed group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-wrench"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">3. Repair & Maintenance</h3>
+                        <p class="text-sm text-brandMuted leading-relaxed">
+                            Proactive and emergency facility maintenance, structural crack repairs, waterproofing, roof maintenance, and plumbing/electrical site fixes.
+                        </p>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-gray-800/80 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-brandYellow">Preventative & Emergency</span>
+                        <a href="#quote" onclick="preselectService('Repair and Maintenance')" class="text-brandCyan text-xs font-bold flex items-center gap-1 hover:underline">
+                            Request Quote <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 4: Roads Construction -->
+                <div class="bg-cardDark rounded-2xl p-6 border border-gray-800 hover:border-brandCyan/50 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1">
+                    <div class="space-y-4">
+                        <div class="w-14 h-14 rounded-xl bg-brandCyan/10 border border-brandCyan/20 text-brandCyan flex items-center justify-center text-2xl group-hover:bg-brandCyan group-hover:text-brandDark transition-colors">
+                            <i class="fa-solid fa-road"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">4. Roads Construction</h3>
+                        <p class="text-sm text-brandMuted leading-relaxed">
+                            Asphalt surfacing, road grading, tarring, gravel access roads, pothole repairs, storm-water drainage installation, and kerbing works.
+                        </p>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-gray-800/80 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-brandYellow">Asphalt & Earthworks</span>
+                        <a href="#quote" onclick="preselectService('Roads Construction')" class="text-brandCyan text-xs font-bold flex items-center gap-1 hover:underline">
+                            Request Quote <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 5: Quantity Surveying Services -->
+                <div class="bg-cardDark rounded-2xl p-6 border border-gray-800 hover:border-brandCyan/50 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1">
+                    <div class="space-y-4">
+                        <div class="w-14 h-14 rounded-xl bg-brandYellow/10 border border-brandYellow/20 text-brandYellow flex items-center justify-center text-2xl group-hover:bg-brandYellow group-hover:text-brandDark transition-colors">
+                            <i class="fa-solid fa-calculator"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">5. Quantity Surveying</h3>
+                        <p class="text-sm text-brandMuted leading-relaxed">
+                            Cost estimation, BOQ (Bill of Quantities) preparation, project feasibility analysis, material cost auditing, and contract administration.
+                        </p>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-gray-800/80 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-brandYellow">Cost Control & Estimation</span>
+                        <a href="#quote" onclick="preselectService('Quantity Surveying Services')" class="text-brandCyan text-xs font-bold flex items-center gap-1 hover:underline">
+                            Request Quote <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 6: Civil and Structure Construction -->
+                <div class="bg-cardDark rounded-2xl p-6 border border-gray-800 hover:border-brandCyan/50 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1">
+                    <div class="space-y-4">
+                        <div class="w-14 h-14 rounded-xl bg-brandRed/10 border border-brandRed/20 text-brandRed flex items-center justify-center text-2xl group-hover:bg-brandRed group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-bridge"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">6. Civil & Structures</h3>
+                        <p class="text-sm text-brandMuted leading-relaxed">
+                            Heavy concrete foundations, retaining walls, structural steel framework, drainage systems, culverts, and large-scale civil engineering.
+                        </p>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-gray-800/80 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-brandYellow">Heavy Infrastructure</span>
+                        <a href="#quote" onclick="preselectService('Civil and Structure Construction')" class="text-brandCyan text-xs font-bold flex items-center gap-1 hover:underline">
+                            Request Quote <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 7: Paving and Walkways Construction -->
+                <div class="bg-cardDark rounded-2xl p-6 border border-gray-800 hover:border-brandCyan/50 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1">
+                    <div class="space-y-4">
+                        <div class="w-14 h-14 rounded-xl bg-brandCyan/10 border border-brandCyan/20 text-brandCyan flex items-center justify-center text-2xl group-hover:bg-brandCyan group-hover:text-brandDark transition-colors">
+                            <i class="fa-solid fa-[#fa-border-all] fa-border-all"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">7. Paving & Walkways</h3>
+                        <p class="text-sm text-brandMuted leading-relaxed">
+                            Interlocking brick paving, commercial driveways, pedestrian walkways, kerb edging, and industrial heavy-duty block paving.
+                        </p>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-gray-800/80 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-brandYellow">Brickwork & Paving</span>
+                        <a href="#quote" onclick="preselectService('Paving and Walkways Construction')" class="text-brandCyan text-xs font-bold flex items-center gap-1 hover:underline">
+                            Request Quote <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 8: Health and Safety Consultation -->
+                <div class="bg-cardDark rounded-2xl p-6 border border-gray-800 hover:border-brandCyan/50 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1">
+                    <div class="space-y-4">
+                        <div class="w-14 h-14 rounded-xl bg-brandYellow/10 border border-brandYellow/20 text-brandYellow flex items-center justify-center text-2xl group-hover:bg-brandYellow group-hover:text-brandDark transition-colors">
+                            <i class="fa-solid fa-shield-heart"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">8. Health & Safety Consult</h3>
+                        <p class="text-sm text-brandMuted leading-relaxed">
+                            OHSA safety compliance files, site safety audits, risk assessments, environmental compliance management, and staff safety training.
+                        </p>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-gray-800/80 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-brandYellow">OHS Audits & Files</span>
+                        <a href="#quote" onclick="preselectService('Health and Safety Consultation')" class="text-brandCyan text-xs font-bold flex items-center gap-1 hover:underline">
+                            Request Quote <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 9: Supply and Installation Services -->
+                <div class="bg-cardDark rounded-2xl p-6 border border-gray-800 hover:border-brandCyan/50 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1">
+                    <div class="space-y-4">
+                        <div class="w-14 h-14 rounded-xl bg-brandRed/10 border border-brandRed/20 text-brandRed flex items-center justify-center text-2xl group-hover:bg-brandRed group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-truck-ramp-box"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">9. Supply & Installation</h3>
+                        <p class="text-sm text-brandMuted leading-relaxed">
+                            Procurement and direct installation of construction materials, fencing, security barriers, structural fixtures, and site equipment.
+                        </p>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-gray-800/80 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-brandYellow">Materials & Hardware</span>
+                        <a href="#quote" onclick="preselectService('Supply and Installation Services')" class="text-brandCyan text-xs font-bold flex items-center gap-1 hover:underline">
+                            Request Quote <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Direct WhatsApp Quote Generator Section -->
+    <section id="quote" class="py-20 bg-brandDark relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-cardDark rounded-3xl p-6 sm:p-10 border border-gray-800 glow-cyan">
+                <div class="text-center space-y-3 mb-8">
+                    <span class="px-3 py-1 rounded-full bg-green-500/10 border border-green-500/30 text-green-400 text-xs font-bold uppercase tracking-wider inline-flex items-center gap-1.5">
+                        <i class="fa-brands fa-whatsapp text-sm"></i> Direct WhatsApp Portal
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-extrabold text-white">Request an Instant Quote</h2>
+                    <p class="text-sm text-brandMuted">
+                        Fill in your project details below to auto-generate a structured message directly sent to our lead engineer via WhatsApp.
+                    </p>
+                </div>
+
+                <form id="whatsappQuoteForm" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <!-- Full Name -->
+                        <div>
+                            <label for="clientName" class="block text-xs font-bold uppercase text-brandMuted mb-2">Full Name / Company Name *</label>
+                            <input type="text" id="clientName" required placeholder="e.g. Sipho Ndlovu / Acme Trading" class="w-full bg-brandDark border border-gray-800 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-brandCyan transition-colors">
+                        </div>
+                        <!-- Phone Number -->
+                        <div>
+                            <label for="clientPhone" class="block text-xs font-bold uppercase text-brandMuted mb-2">Contact Number *</label>
+                            <input type="tel" id="clientPhone" required placeholder="e.g. 082 123 4567" class="w-full bg-brandDark border border-gray-800 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-brandCyan transition-colors">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <!-- Service Selection -->
+                        <div>
+                            <label for="serviceSelect" class="block text-xs font-bold uppercase text-brandMuted mb-2">Select Primary Service *</label>
+                            <select id="serviceSelect" required class="w-full bg-brandDark border border-gray-800 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-brandCyan transition-colors">
+                                <option value="" disabled selected>-- Choose a Service --</option>
+                                <option value="Building Construction">1. Building Construction</option>
+                                <option value="Renovations">2. Renovations</option>
+                                <option value="Repair and Maintenance">3. Repair and Maintenance</option>
+                                <option value="Roads Construction">4. Roads Construction</option>
+                                <option value="Quantity Surveying Services">5. Quantity Surveying Services</option>
+                                <option value="Civil and Structure Construction">6. Civil and Structure Construction</option>
+                                <option value="Paving and Walkways Construction">7. Paving and Walkways Construction</option>
+                                <option value="Health and Safety Consultation">8. Health and Safety Consultation</option>
+                                <option value="Supply and Installation Services">9. Supply and Installation Services</option>
+                                <option value="Multiple / General Inquiry">Multiple Services / General Inquiry</option>
+                            </select>
+                        </div>
+                        <!-- Location/Region -->
+                        <div>
+                            <label for="projectLocation" class="block text-xs font-bold uppercase text-brandMuted mb-2">Project Location / Area *</label>
+                            <input type="text" id="projectLocation" required placeholder="e.g. Bree St JHB / Polokwane / Pretoria" class="w-full bg-brandDark border border-gray-800 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-brandCyan transition-colors">
+                        </div>
+                    </div>
+
+                    <!-- Project Description -->
+                    <div>
+                        <label for="projectDetails" class="block text-xs font-bold uppercase text-brandMuted mb-2">Brief Project Description & Requirements</label>
+                        <textarea id="projectDetails" rows="4" placeholder="Mention dimensions, site conditions, estimated timeline, or special requirements..." class="w-full bg-brandDark border border-gray-800 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-brandCyan transition-colors"></textarea>
+                    </div>
+
+                    <!-- Action Submit Button -->
+                    <button type="submit" class="w-full py-4 rounded-xl bg-green-600 hover:bg-green-500 text-white font-extrabold text-base shadow-lg transition-all flex items-center justify-center gap-3">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i> Send Direct WhatsApp Request (+27 74 027 6169)
+                    </button>
+                    <p class="text-center text-xs text-brandMuted">
+                        Clicking above opens WhatsApp with your pre-formatted quote details ready to send.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Map Information Section -->
+    <section id="contact" class="py-20 bg-cardDark/30 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Contact Details -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="text-brandYellow font-bold text-xs uppercase tracking-widest">Get In Touch</span>
+                        <h2 class="text-3xl font-extrabold text-white mt-1">Headquarters & Contact</h2>
+                        <p class="text-brandMuted text-sm mt-2">
+                            Our primary administrative office is situated in central Johannesburg, serving projects throughout Gauteng and Limpopo provinces.
+                        </p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <!-- Office Address -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-brandCyan/10 border border-brandCyan/20 text-brandCyan flex items-center justify-center shrink-0 text-xl">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold text-base">Office Address</h4>
+                                <p class="text-sm text-brandMuted mt-0.5">
+                                    103 Frank's Place, Bree street 99<br>
+                                    Johannesburg, 2001<br>
+                                    South Africa
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Phone Numbers -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-brandYellow/10 border border-brandYellow/20 text-brandYellow flex items-center justify-center shrink-0 text-xl">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold text-base">Direct Lines</h4>
+                                <p class="text-sm text-brandMuted mt-0.5">
+                                    Primary: <a href="tel:0740276169" class="text-white font-semibold hover:text-brandCyan">074 027 6169</a><br>
+                                    Intl: <a href="tel:+27740276169" class="text-white font-semibold hover:text-brandCyan">+27 74 027 6169</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Service Regions -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-brandRed/10 border border-brandRed/20 text-brandRed flex items-center justify-center shrink-0 text-xl">
+                                <i class="fa-solid fa-map-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold text-base">Operational Provinces</h4>
+                                <p class="text-sm text-brandMuted mt-0.5">
+                                    Full mobile contractor fleet covering Gauteng & Limpopo.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Direct Action Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                        <a href="tel:0740276169" class="flex-1 py-3 px-4 rounded-xl bg-brandYellow text-brandDark font-extrabold text-sm text-center flex items-center justify-center gap-2 hover:bg-yellow-400 transition-colors">
+                            <i class="fa-solid fa-phone"></i> Call 074 027 6169
+                        </a>
+                        <a href="https://wa.me/27740276169" target="_blank" rel="noopener noreferrer" class="flex-1 py-3 px-4 rounded-xl bg-green-600 text-white font-extrabold text-sm text-center flex items-center justify-center gap-2 hover:bg-green-500 transition-colors">
+                            <i class="fa-brands fa-whatsapp text-lg"></i> Direct WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Google Maps Embed Placeholder Container -->
+                <div class="lg:col-span-7 bg-cardDark rounded-3xl border border-gray-800 overflow-hidden flex flex-col h-[400px] lg:h-auto min-h-[350px]">
+                    <div class="bg-brandDark px-6 py-4 border-b border-gray-800 flex items-center justify-between">
+                        <span class="text-xs font-bold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-building text-brandCyan"></i> Frank's Place, Bree Street 99 - JHB
+                        </span>
+                        <a href="https://maps.google.com/?q=Bree+Street+99+Johannesburg" target="_blank" rel="noopener noreferrer" class="text-xs text-brandCyan hover:underline font-semibold">
+                            Open in Google Maps <i class="fa-solid fa-up-right-from-square text-[10px]"></i>
+                        </a>
+                    </div>
+                    <div class="flex-1 relative bg-gray-900">
+                        <iframe 
+                            title="Copacetic Office Location"
+                            src="https://maps.google.com/maps?q=-26.2008,28.0436&z=15&output=embed" 
+                            class="w-full h-full border-0 filter grayscale opacity-80 hover:opacity-100 transition-opacity"
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brandDark border-t border-gray-800 py-12 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <!-- Col 1 -->
+                <div class="space-y-4 md:col-span-2">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-helmet-safety text-brandYellow text-2xl"></i>
+                        <span class="font-extrabold text-white text-lg">COPACETIC (PTY) LTD</span>
+                    </div>
+                    <p class="text-brandMuted text-xs max-w-md leading-relaxed">
+                        Providing reliable services and excellent solutions in Engineering, General Contracting, Quantity Surveying, and Civil Construction across South Africa.
+                    </p>
+                    <div class="text-xs text-brandYellow font-semibold">
+                        Reg: CIDB Compliant | NHBRC Certified Standards
+                    </div>
+                </div>
+
+                <!-- Col 2 -->
+                <div class="space-y-3">
+                    <h4 class="text-white font-bold text-sm uppercase tracking-wider">Quick Links</h4>
+                    <ul class="space-y-2 text-xs text-brandMuted">
+                        <li><a href="#about" class="hover:text-brandCyan transition-colors">About Copacetic</a></li>
+                        <li><a href="#services" class="hover:text-brandCyan transition-colors">Fleet & Services</a></li>
+                        <li><a href="#quote" class="hover:text-brandCyan transition-colors">Request Quote</a></li>
+                        <li><a href="#contact" class="hover:text-brandCyan transition-colors">Johannesburg Office</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div class="space-y-3">
+                    <h4 class="text-white font-bold text-sm uppercase tracking-wider">Direct Assistance</h4>
+                    <div class="space-y-2 text-xs">
+                        <div>
+                            <span class="text-brandMuted block">Call Line:</span>
+                            <a href="tel:0740276169" class="text-white font-bold hover:text-brandCyan">074 027 6169</a>
+                        </div>
+                        <div>
+                            <span class="text-brandMuted block">WhatsApp:</span>
+                            <a href="https://wa.me/27740276169" target="_blank" rel="noopener noreferrer" class="text-green-400 font-bold hover:underline">+27 74 027 6169</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-gray-800/80 flex flex-col sm:flex-row items-center justify-between text-xs text-brandMuted gap-4">
+                <p>© <span id="currentYear"></span> Copacetic (Pty) Ltd. All rights reserved.</p>
+                <div class="flex gap-4">
+                    <a href="#quote" class="hover:text-white">Terms of Service</a>
+                    <a href="#quote" class="hover:text-white">Safety Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Persistent / Sticky Quick Contact Floating Bar (Mobile & Mobile-Tablet Priority) -->
+    <div class="fixed bottom-0 inset-x-0 z-40 bg-brandDark/95 backdrop-blur-md border-t border-gray-800 p-3 shadow-2xl md:hidden">
+        <div class="grid grid-cols-2 gap-3 max-w-md mx-auto">
+            <!-- Call App Button -->
+            <a href="tel:0740276169" class="py-3 px-4 rounded-xl bg-cardDark border border-brandYellow/40 text-brandYellow font-extrabold text-xs text-center flex items-center justify-center gap-2 active:scale-95 transition-transform">
+                <i class="fa-solid fa-phone text-sm"></i> Call App
+            </a>
+            <!-- Direct WhatsApp Button -->
+            <a href="https://wa.me/27740276169" target="_blank" rel="noopener noreferrer" class="py-3 px-4 rounded-xl bg-green-600 text-white font-extrabold text-xs text-center flex items-center justify-center gap-2 active:scale-95 transition-transform shadow-lg shadow-green-900/30">
+                <i class="fa-brands fa-whatsapp text-base"></i> WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Set dynamic copyright year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Mobile Drawer Elements
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const closeDrawerBtn = document.getElementById('closeDrawerBtn');
+        const mobileDrawer = document.getElementById('mobileDrawer');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function openDrawer() {
+            mobileDrawer.classList.remove('translate-x-full');
+            document.body.classList.add('overflow-hidden');
+        }
+
+        function closeDrawer() {
+            mobileDrawer.classList.add('translate-x-full');
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        if (mobileMenuBtn && closeDrawerBtn && mobileDrawer) {
+            mobileMenuBtn.addEventListener('click', openDrawer);
+            closeDrawerBtn.addEventListener('click', closeDrawer);
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', closeDrawer);
+            });
+        }
+
+        // Helper function to preselect service from cards
+        function preselectService(serviceName) {
+            const serviceSelect = document.getElementById('serviceSelect');
+            if (serviceSelect) {
+                serviceSelect.value = serviceName;
+            }
+        }
+
+        // Interactive WhatsApp Quote Form Generator
+        const whatsappQuoteForm = document.getElementById('whatsappQuoteForm');
+        if (whatsappQuoteForm) {
+            whatsappQuoteForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                // Retrieve form values
+                const name = document.getElementById('clientName').value.trim();
+                const phone = document.getElementById('clientPhone').value.trim();
+                const service = document.getElementById('serviceSelect').value;
+                const location = document.getElementById('projectLocation').value.trim();
+                const details = document.getElementById('projectDetails').value.trim();
+
+                // Format WhatsApp Message
+                let message = `*NEW QUOTE REQUEST - COPACETIC (PTY) LTD*\n\n`;
+                message += `*Client Name:* ${name}\n`;
+                message += `*Contact:* ${phone}\n`;
+                message += `*Selected Service:* ${service}\n`;
+                message += `*Project Location:* ${location}\n`;
+                if (details) {
+                    message += `*Details:* ${details}\n`;
+                }
+                message += `\n_Sent via Copacetic Website Quote Portal_`;
+
+                // Encode URL and redirect to WhatsApp number (+27 74 027 6169)
+                const encodedMessage = encodeURIComponent(message);
+                const whatsappUrl = `https://wa.me/27740276169?text=${encodedMessage}`;
+
+                // Open WhatsApp in new tab/app
+                window.open(whatsappUrl, '_blank');
+            });
+        }
+    </script>
+</body>
+</html>
+```
